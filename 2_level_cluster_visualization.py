@@ -68,7 +68,7 @@ for cluster in df["cluster"].unique():
 
         words = []
         counts = []
-        for letter, count in counted_words.most_common(3):
+        for letter, count in counted_words.most_common(3): 
             words.append(letter)
             counts.append(count)
         print (f"{cluster_len} :cluster {cluster}:sub-cluster {sub_cluster}'s main vocabs:{words} with frenquncy of {counts}")
