@@ -11,7 +11,7 @@ import numpy as np
 #For clustering 
 import pandas as pd
 
-df = pd.read_csv("./data/bank_SG.csv")
+df = pd.read_csv("../data/bank_SG.csv")
 query_list = df["query"].tolist()
 
 
@@ -23,7 +23,7 @@ BERT_embedding = bc.encode(query_list)
 
 
 km = KMeans()
-km = KMeans(n_clusters=5)
+km = KMeans(n_clusters=7)
 km.fit(BERT_embedding)
 clusters = km.labels_.tolist()
 
@@ -35,7 +35,7 @@ df_query_cluster = pd.DataFrame({'query':query_list,
 for i in set(clusters):
     cluster_query_list = df_query_cluster[df_query_cluster['cluster'] == i]['query']
     cluster_BERT_embedding = bc.encode(cluster_query_list.to_list())
-    km = KMeans(n_clusters=5)
+    km = KMeans(n_clusters=10)
     km.fit(cluster_BERT_embedding)
     #visualizer = KElbowVisualizer(km, k=(2,7))
     #visualizer.fit(cluster_BERT_embedding)
@@ -47,7 +47,7 @@ for i in set(clusters):
 # for 2-20 the best number of clueters id 7,8 
 # and for 2-40 the best is 18
 print(df_query_cluster.shape)
-df_query_cluster.to_csv("clustering_result_SG_2l.csv", sep = '\t', index = False, header = False)
+df_query_cluster.to_csv("../clustering_result_SG_2l.csv", sep = '\t', index = False, header = False)
 
 
 
