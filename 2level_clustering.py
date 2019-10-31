@@ -15,9 +15,6 @@ df = pd.read_csv("../data/bank_SG.csv")
 query_list = df["query"].tolist()
 
 
-
-
-
 bc = BertClient(ip='localhost')
 BERT_embedding = bc.encode(query_list)
 
