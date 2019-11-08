@@ -5,7 +5,7 @@ from PIL import Image
 from wordcloud import WordCloud, ImageColorGenerator
 #from nltk.tokenize import word_tokenize
 ### tokenize ###
-import spacy
+import spacy 
 ### stopwords ###
 from spacy.lang.en.stop_words import STOP_WORDS
 
