@@ -6,8 +6,8 @@ from yellowbrick.cluster import KElbowVisualizer
 import argparse 
 
 
-args = argparse.ArgumentParser("input arguments")
-args.add_argument("--corpus_name", required= True, default="fr_core_news_sm",\
+parser = argparse.ArgumentParser("input arguments")
+parser.add_argument("--corpus_name",  default="fr_core_news_sm",\
      type=str, help="insert the pretrained statistical corpus name, default is for French, fr_core_news_sm")
 args = parser.parse_args()
 
