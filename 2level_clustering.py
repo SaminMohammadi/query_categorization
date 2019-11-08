@@ -1,3 +1,19 @@
+###############################################
+#
+#   This python code clusters queries using KMeans and DBScan algorithms 
+#   Since the results of KMeans are better we keep DBScan's code lines commneted
+#   This code uses Bert_as_a_service, so to run this, you need to install and run it first.  
+#           pip install bert-serving-server  
+#           pip install bert-serving-client 
+#   use googl's  pretrained version
+#           bert-serving-start -model_dir=./bert-folder/multi_cased_L-12_H-768_A-12 
+#   use your own fune-tuned version
+#           bert-serving-start -model_dir= ./my_bert/multi_cased_L-12_H-768_A-12 \
+#                   -tuned_model_dir= ./my_bert/bert_output/ -ckpt_name=model.ckpt-374
+#   P.s. -ckpt_name comes from bert_output folder which is the name of model check point  
+#   
+############################################### 
+
 import csv
 from bert_serving.client import BertClient
 from sklearn.cluster import KMeans
