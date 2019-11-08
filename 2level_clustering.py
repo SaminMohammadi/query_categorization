@@ -23,8 +23,8 @@ import pandas as pd
 df = pd.read_csv("../data/bank_SG.csv")
 query_list = df["query"].tolist()
 
-no_clusters = 10
-no_subclusters = 10
+no_clusters = 5
+no_subclusters = 5
 
 bc = BertClient(ip='localhost')
 
